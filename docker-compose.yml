@@ -20,6 +20,6 @@ services:
       - PYTHONPATH=/app
       - SHOW_LABEL_IMAGE_DIR=/tmp/com-labels-images
 
-    volumes:
-      - ./log:/var/log/com-labels
-      - ./com-labels-images:/tmp/com-labels-images
+#    volumes:
+#      - ./log:/var/log/com-labels
+#       - ./com-labels-images:/tmp/com-labels-images

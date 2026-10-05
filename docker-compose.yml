@@ -1,0 +1,25 @@
+services:
+  python-com-labels:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: tw-app-com-labels
+
+    env_file:
+      - .env.com.labels
+
+    stdin_open: true
+    tty: true
+
+    ports:
+      - "8000:8000"
+      - "8765:8765"
+
+    environment:
+      - PYTHONPATH=/app
+      - SHOW_LABEL_IMAGE_DIR=/tmp/com-labels-images
+
+    volumes:
+      - ./log:/var/log/com-labels
+      - ./com-labels-images:/tmp/com-labels-images
